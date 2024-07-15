@@ -3,21 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Job Search Portfolio</title>
+    <title>Yusuf Noor - Job Search Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --purple-dark: #4a0e4e;
             --purple-light: #8e44ad;
             --white: #ffffff;
+            --light-purple: #f3e5f5;
         }
         body {
             font-family: Arial, sans-serif;
-            background-color: var(--white);
+            background-color: var(--light-purple);
             color: var(--purple-dark);
             line-height: 1.6;
             margin: 0;
             padding: 0;
+            position: relative;
+            overflow-x: hidden;
+        }
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.1;
+            overflow: hidden;
+        }
+        .code-line {
+            position: absolute;
+            font-family: monospace;
+            color: var(--purple-dark);
+            font-size: 14px;
+            white-space: nowrap;
+            animation: scrollCode 20s linear infinite;
+        }
+        @keyframes scrollCode {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(100vh);
+            }
         }
         header {
             background-color: var(--purple-dark);
@@ -106,12 +135,24 @@
     </style>
 </head>
 <body>
+    <div class="background">
+        <div class="code-line" style="left: 5%; animation-delay: -2s;">function greet(name) {</div>
+        <div class="code-line" style="left: 15%; animation-delay: -4s;">return `Hello, ${name}!`;</div>
+        <div class="code-line" style="left: 25%; animation-delay: -6s;">}</div>
+        <div class="code-line" style="left: 35%; animation-delay: -8s;">const result = greet('World');</div>
+        <div class="code-line" style="left: 45%; animation-delay: -10s;">console.log(result);</div>
+        <div class="code-line" style="left: 55%; animation-delay: -12s;">// Output: Hello, World!</div>
+        <div class="code-line" style="left: 65%; animation-delay: -14s;">for (let i = 0; i < 10; i++) {</div>
+        <div class="code-line" style="left: 75%; animation-delay: -16s;">console.log(i);</div>
+        <div class="code-line" style="left: 85%; animation-delay: -18s;">}</div>
+    </div>
+
     <header>
         <i class="fas fa-code decoration top-left"></i>
-        <h1>Your Name</h1>
-        <p>Job Title / Desired Position</p>
+        <h1>Yusuf Noor</h1>
+        <p>Android Developer | Graphic Designer | Flutter Developer</p>
         <i class="fas fa-laptop-code decoration bottom-right"></i>
-        <img src="https://via.placeholder.com/150" alt="Your Name" class="profile-img">
+        <img src="https://via.placeholder.com/150" alt="Yusuf Noor" class="profile-img">
     </header>
 
     <div class="container">

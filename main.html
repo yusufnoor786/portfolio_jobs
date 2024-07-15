@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Job Search Portfolio</title>
+    <style>
+        :root {
+            --purple-dark: #4a0e4e;
+            --purple-light: #8e44ad;
+            --white: #ffffff;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--white);
+            color: var(--purple-dark);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: var(--purple-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+        }
+        h1, h2 {
+            margin: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 2rem 0;
+        }
+        .section {
+            background-color: var(--white);
+            margin: 1rem 0;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(74, 14, 78, 0.1);
+        }
+        .section h2 {
+            color: var(--purple-light);
+            border-bottom: 2px solid var(--purple-light);
+            padding-bottom: 0.5rem;
+        }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .skill {
+            background-color: var(--purple-light);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        .contact-info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .contact-item {
+            flex-basis: 48%;
+            margin-bottom: 1rem;
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+            .contact-item {
+                flex-basis: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Yusuf Noor</h1>
+        <p>Android Developer / Graphic Designer | Flutter Developer</p>
+    </header>
+
+    <div class="container">
+        <section class="section">
+            <h2>About Me</h2>
+            <p>Write a brief introduction about yourself, your career goals, and what you're looking for in your next job opportunity.</p>
+        </section>
+
+        <section class="section">
+            <h2>Skills</h2>
+            <div class="skills">
+                <span class="skill">Graphic Designer</span>
+                <span class="skill">Android Developer</span>
+                <span class="skill">Flutter Developer</span>
+                <span class="skill"></span>
+                <span class="skill">Skill 5</span>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Experience</h2>
+            <h3>Graphic Designer - AS EARTH MOVER</h3>
+            <p>December 2023 - May 2024</p>
+            <ul>
+                <li>Key responsibility or achievement</li>
+                <li>Key responsibility or achievement</li>
+                <li>Key responsibility or achievement</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Education</h2>
+            <h3>Degree Name - Institution</h3>
+            <p>Graduation Year</p>
+            <p>Any relevant coursework or achievements</p>
+        </section>
+
+        <section class="section">
+            <h2>Contact Information</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>Email:</strong> your.email@example.com
+                </div>
+                <div class="contact-item">
+                    <strong>Phone:</strong> (123) 456-7890
+                </div>
+                <div class="contact-item">
+                    <strong>LinkedIn:</strong> linkedin.com/in/yourprofile
+                </div>
+                <div class="contact-item">
+                    <strong>Location:</strong> City, State/Country
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

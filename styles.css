@@ -102,3 +102,74 @@ header h1, header p {
     position: relative;
     z-index: 1;
 }
+
+/* Add this to your existing header styles */
+header {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+header:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Modify the existing h1 and header p styles */
+h1 {
+    margin-bottom: 0.5rem;
+    opacity: 0;
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+
+header p {
+    margin-top: 0;
+    opacity: 0;
+    animation: fadeInUp 1s ease-in-out 0.5s forwards;
+}
+
+/* Add these new keyframe animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    from { border-right-color: rgba(255,255,255,.75); }
+    to { border-right-color: transparent; }
+}
+
+/* Add this for the typewriter effect on section headings */
+section h2 {
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: 
+        typewriter 2s steps(40, end) forwards,
+        blink 0.8s infinite;
+    border-right: 2px solid rgba(255,255,255,.75);
+}
+
+/* Add hover effects to section headings */
+section h2:hover {
+    color: #FF8C00;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Add hover effects to list items */
+li {
+    transition: transform 0.2s ease-in-out;
+}
+
+li:hover {
+    transform: translateX(10px);
+}

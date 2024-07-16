@@ -1,20 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('header');
-    header.style.animation = 'popUp 1s ease-in-out';
+    header.style.animation = 'fadeInUp 1s ease-in-out';
 
     const sections = document.querySelectorAll('section');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.animation = 'fadeIn 1s ease-in-out forwards';
+                entry.target.style.animation = 'fadeInUp 1s ease-in-out forwards';
                 
-                // Animate the heading
                 const heading = entry.target.querySelector('h2');
                 if (heading) {
-                    heading.style.animation = 'typewriter 2s steps(40, end) forwards, blink 0.8s infinite';
+                    heading.style.animation = 'fadeInUp 1s ease-in-out forwards';
                 }
                 
-                // Animate list items
                 const listItems = entry.target.querySelectorAll('li');
                 listItems.forEach((item, index) => {
                     item.style.animation = `fadeInUp 0.5s ease-in-out ${index * 0.1}s forwards`;
@@ -27,14 +25,22 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(section);
     });
 
-    // Add hover effect to header
-    header.addEventListener('mouseover', () => {
-        header.style.transform = 'translateY(-5px)';
-        header.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+    // Parallax effect for background
+    window.addEventListener('scroll', () => {
+        const scrollPosition = window.pageYOffset;
+        document.body.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
     });
 
-    header.addEventListener('mouseout', () => {
-        header.style.transform = 'translateY(0)';
-        header.style.boxShadow = 'none';
+    // Skill tags random movement
+    const skillTags = document.querySelectorAll('.skills-list li');
+    skillTags.forEach(tag => {
+        tag.addEventListener('mouseover', () => {
+            const randomX = Math.random() * 10 - 5;
+            const randomY = Math.random() * 10 - 5;
+            tag.style.transform = `translate(${randomX}px, ${randomY}px) scale(1.1)`;
+        });
+        tag.addEventListener('mouseout', () => {
+            tag.style.transform = 'translate(0, 0) scale(1)';
+        });
     });
 });

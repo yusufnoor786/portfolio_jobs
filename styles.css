@@ -1,30 +1,62 @@
+:root {
+    --dark-orange: #FF8C00;
+    --light-orange: #FFA500;
+    --white: #FFFFFF;
+    --dark-gray: #333333;
+}
+
 body {
-    font-family: 'New Times Roman', serif;
-    background-color: #fff;
-    color: #333;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--dark-gray);
+    color: var(--white);
     margin: 0;
     padding: 0;
+    line-height: 1.6;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    z-index: -1;
 }
 
 header {
-    background-color: #FFB347;
-    color: white;
-    padding: 2rem;
+    background-color: var(--dark-orange);
+    color: var(--white);
+    padding: 3rem;
     text-align: center;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50% 20%;
+    border-bottom-right-radius: 50% 20%;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s ease-in-out;
+}
+
+header:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
 }
 
 .profile-image {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
     width: 150px;
     height: 150px;
     border-radius: 50%;
     overflow: hidden;
+    margin: 0 auto 1rem;
+    border: 5px solid var(--white);
+    transition: transform 0.3s ease-in-out;
+}
+
+.profile-image:hover {
+    transform: scale(1.1);
 }
 
 .profile-image img {
@@ -34,13 +66,16 @@ header {
 }
 
 h1 {
+    font-size: 2.5rem;
     margin-bottom: 0.5rem;
-    animation: fadeIn 1s ease-in-out;
+    animation: fadeInUp 1s ease-in-out;
 }
 
 header p {
+    font-size: 1.2rem;
     margin-top: 0;
-    animation: slideIn 1s ease-in-out;
+    animation: fadeInUp 1s ease-in-out 0.5s forwards;
+    opacity: 0;
 }
 
 main {
@@ -49,15 +84,25 @@ main {
     padding: 0 1rem;
 }
 
-section {
+.card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 1.5rem;
     margin-bottom: 2rem;
-    animation: fadeIn 1s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
 h2 {
-    color: #FFB347;
-    border-bottom: 2px solid #FFB347;
+    color: var(--light-orange);
+    border-bottom: 2px solid var(--light-orange);
     padding-bottom: 0.5rem;
+    margin-top: 0;
 }
 
 ul {
@@ -67,66 +112,33 @@ ul {
 
 li {
     margin-bottom: 1rem;
+    transition: transform 0.2s ease-in-out;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+li:hover {
+    transform: translateX(10px);
 }
 
-@keyframes slideIn {
-    from { transform: translateY(-20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
-@keyframes popUp {
-    0% { transform: scale(0.8); opacity: 0; }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); opacity: 1; }
+.skills-list li {
+    background-color: var(--dark-orange);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease-in-out;
 }
 
-header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('your-custom-background-image-url.jpg') center/cover 
-no-repeat;
-    opacity: 0.1;
-    z-index: -1;
+.skills-list li:hover {
+    background-color: var(--light-orange);
+    transform: scale(1.1);
 }
 
-header h1, header p {
-    position: relative;
-    z-index: 1;
-}
-
-/* Add this to your existing header styles */
-header {
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-header:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-/* Modify the existing h1 and header p styles */
-h1 {
-    margin-bottom: 0.5rem;
-    opacity: 0;
-    animation: fadeInUp 1s ease-in-out forwards;
-}
-
-header p {
-    margin-top: 0;
-    opacity: 0;
-    animation: fadeInUp 1s ease-in-out 0.5s forwards;
-}
-
-/* Add these new keyframe animations */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -138,38 +150,18 @@ header p {
     }
 }
 
-@keyframes typewriter {
-    from { width: 0; }
-    to { width: 100%; }
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
 }
 
-@keyframes blink {
-    from { border-right-color: rgba(255,255,255,.75); }
-    to { border-right-color: transparent; }
-}
-
-/* Add this for the typewriter effect on section headings */
-section h2 {
-    position: relative;
-    overflow: hidden;
-    white-space: nowrap;
-    animation: 
-        typewriter 2s steps(40, end) forwards,
-        blink 0.8s infinite;
-    border-right: 2px solid rgba(255,255,255,.75);
-}
-
-/* Add hover effects to section headings */
-section h2:hover {
-    color: #FF8C00;
-    transition: color 0.3s ease-in-out;
-}
-
-/* Add hover effects to list items */
-li {
-    transition: transform 0.2s ease-in-out;
-}
-
-li:hover {
-    transform: translateX(10px);
+.card {
+    animation: float 5s ease-in-out infinite;
 }

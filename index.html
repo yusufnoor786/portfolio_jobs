@@ -4,370 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yusuf Noor - Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --purple-dark: #4a0e4e;
-            --purple-light: #8e44ad;
-            --white: #ffffff;
-            --light-purple: #f3e5f5;
-            --gray: #f0f0f0;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            background-color: var(--gray);
-            color: var(--purple-dark);
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            position: relative;
-            overflow-x: hidden;
-        }
-        .background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            opacity: 0.1;
-            overflow: hidden;
-        }
-        .code-symbol {
-            position: absolute;
-            font-size: 24px;
-            color: var(--purple-dark);
-            animation: float 15s infinite;
-        }
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0); }
-            25% { transform: translate(10px, -10px); }
-            50% { transform: translate(-10px, 10px); }
-            75% { transform: translate(10px, 10px); }
-        }
-        header {
-            background-color: var(--light-purple);
-            color: var(--purple-dark);
-            padding: 2rem 0;
-            position: relative;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            animation: fadeIn 1s ease-out;
-            overflow: hidden;
-            border-radius: 0 0 20px 20px;
-            transition: all 0.3s ease;
-        }
-        header:hover {
-        transform: translateY(5px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        .header-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            overflow: hidden;
-            z-index: 0;
-        }
-        .code-line {
-            position: absolute;
-            font-family: monospace;
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.1);
-            white-space: nowrap;
-            animation: scrollCode 20s linear infinite;
-        }
-        @keyframes scrollCode {
-            from { transform: translateY(100%); }
-            to { transform: translateY(-100%); }
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .header-content {
-            margin-left: 10%;
-            z-index: 1;
-        }
-        .profile-img-container {
-            margin-right: 10%;
-            z-index: 1;
-        }
-        .profile-img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            border: 5px solid var(--white);
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        h1, h2 {
-            margin: 0;
-        }
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
-            padding: 2rem 0;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-        .card {
-            background-color: var(--white);
-            border-radius: 15px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 1.5rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            animation: slideIn 0.5s ease-out;
-            opacity: 0;
-            animation-fill-mode: forwards;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-        }
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .card h2 {
-            color: var(--purple-light);
-            border-bottom: 2px solid var(--purple-light);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1rem;
-        }
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-        .skill {
-            background-color: var(--purple-light);
-            color: var(--white);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            transition: transform 0.3s ease;
-        }
-        .skill:hover {
-            transform: scale(1.1);
-        }
-        .contact-info {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-        .contact-item {
-            transition: color 0.3s ease;
-        }
-        .contact-item:hover {
-            color: var(--purple-light);
-        }
-        .icon {
-            margin-right: 0.5rem;
-            color: var(--purple-light);
-        }
-        .animated-text {
-            display: inline-block;
-            animation: bounce 1s ease infinite;
-        }
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        @media (max-width: 768px) {
-            .container {
-                grid-template-columns: 1fr;
-            }
-            header {
-                flex-direction: column;
-                text-align: center;
-            }
-            .header-content, .profile-img-container {
-                margin: 1rem 0;
-            }
-        }
-    </style>
+    <link 
+href="https://fonts.googleapis.com/css2?family=New+Times+Roman&display=swap" 
+rel="stylesheet">
+    <link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="background">
-        <div class="code-symbol" style="top: 10%; left: 5%;">{ }</div>
-        <div class="code-symbol" style="top: 30%; left: 15%;">< /></div>
-        <div class="code-symbol" style="top: 50%; left: 25%;">#</div>
-        <div class="code-symbol" style="top: 70%; left: 35%;">( )</div>
-        <div class="code-symbol" style="top: 20%; left: 65%;">;</div>
-        <div class="code-symbol" style="top: 40%; left: 75%;">=></div>
-        <div class="code-symbol" style="top: 60%; left: 85%;">&&</div>
-        <div class="code-symbol" style="top: 90%; left: 86%;">mkdir</div>
-        <div class="code-symbol" style="top: 95%; left: 88%;">clear</div>
-        <div class="code-symbol" style="top: 98%; left: 88%;">RUN</div>
-        <div class="code-symbol" style="top: 99%; left: 89%;">Debug</div>
-        <div class="code-symbol" style="top: 80%; left: 95%;">||</div>
-    </div>
-
     <header>
-        <div class="header-background">
-            <div class="code-line" style="left: 5%;">function developAwesomeCode() {</div>
-            <div class="code-line" style="left: 15%; animation-delay: -5s;">const skills = ['JavaScript', 'Python', 'React'];</div>
-            <div class="code-line" style="left: 80%; animation-delay: -33s;">const skills = ['Android Developer' ];</div>
-            <div class="code-line" style="left: 85%; animation-delay: -24s;">const skills = ['Flutter Developer' ];</div>
-            <div class="code-line" style="left: 90%; animation-delay: -29s;">const skills = ['Graphic Designer' ];</div>
-            <div class="code-line" style="left: 95%; animation-delay: -45s;">const skills = ['Github', 'Gitlab'];</div>
-            <div class="code-line" style="left: 100%; animation-delay: -50s;">const skills = ['AOSP', 'Project Mist'];</div>
-            <div class="code-line" style="left: 25%; animation-delay: -10s;">for (let skill of skills) {</div>
-            <div class="code-line" style="left: 35%; animation-delay: -15s;">console.log(`I'm great at ${skill}!`);</div>
-            <div class="code-line" style="left: 45%; animation-delay: -7s;">}</div>
-            <div class="code-line" style="left: 55%; animation-delay: -12s;">return 'Hire me!';</div>
-            <div class="code-line" style="left: 65%; animation-delay: -17s;">}</div>
-            <div class="code-line" style="left: 75%; animation-delay: -3s;">developAwesomeCode();</div>
+        <div class="profile-image">
+            <img src="your-profile-image-url.jpg" alt="Yusuf Noor">
         </div>
-        <div class="header-content">
-            <h1><span class="animated-text">Yusuf Noor</span></h1>
-            <p>Android Developer | Flutter Developer | Graphic Designer</p>
-        </div>
-        <div class="profile-img-container">
-            <img src="./assets/images/my-image.png" alt="Yusuf Noor" class="profile-img">
-        </div>
+        <h1>Yusuf Noor</h1>
+        <p>B.Tech CSE Student | Android Developer | Graphic Designer | 
+Flutter Developer</p>
     </header>
 
-    <div class="container">
-        <!-- Rest of the cards remain unchanged -->
-        <div class="card" style="animation-delay: 0.2s;">
-            <h2><i class="fas fa-user icon"></i>About Me</h2>
-            <p>👨‍💻 Hello! I'm Yusuf Noor, a passionate CSE BTech student with a knack for creating impactful digital experiences. My journey began with Android development, where I honed my skills crafting intuitive mobile applications. Venturing into Flutter, I discovered the joy of building cross-platform solutions that blend functionality with elegance.</p>
-            <p>🎨 Alongside coding, I indulge my creative side as a graphic designer, transforming ideas into visually compelling designs. With proficiency in tools like Adobe Creative Suite, I bring a unique perspective to every project.</p>
-            <p>🔗 I thrive in collaborative environments and leverage platforms like GitHub and GitLab to ensure smooth project management and version control. Beyond coding and design, I'm enthusiastic about exploring new technologies and refining my craft.</p>
-        </div>
+    <main>
+        <section id="about">
+            <h2><i class="fas fa-user"></i> About Me</h2>
+            <p>I'm a B.Tech CSE student with experience in Android 
+development, graphic design, and Flutter development.</p>
+        </section>
 
-        <div class="card" style="animation-delay: 0.4s;">
-            <h2><i class="fas fa-cogs icon"></i>Skills</h2>
-            <div class="skills">
-                <span class="skill"><i class="fas fa-check"></i> Graphic Designer</span>
-                <span class="skill"><i class="fas fa-check"></i> Android Developer</span>
-                <span class="skill"><i class="fas fa-check"></i> Flutter Developer</span>
-                <span class="skill"><i class="fas fa-check"></i> Github, Gitlab</span>
-                <span class="skill"><i class="fas fa-check"></i> AOSP Project</span>
-            </div>
-        </div>
-
-        <div class="card" style="animation-delay: 0.6s;">
-            <h2><i class="fas fa-briefcase icon"></i>Experience</h2>
-            <h3>Graphic Designer Internship - AS EARTH MOVER</h3>
-            <p><i class="far fa-calendar-alt"></i> December 2023 - May 2024</p>
+        <section id="experience">
+            <h2><i class="fas fa-briefcase"></i> Experience</h2>
             <ul>
-                <li>Product Some Amazing Graphic Designe</li>
-                <li>Make Some Videos for Reels</li>
-                <li>Done Social Media Post</li>
+                <li>
+                    <h3>Flutter Developer</h3>
+                    <p>June 2024 - Present</p>
+                </li>
+                <li>
+                    <h3>Graphic Designer Intern</h3>
+                    <p>AS EARTH MOVER | December 2023 - May 2024</p>
+                </li>
+                <li>
+                    <h3>Android Developer</h3>
+                    <p>2019 - Present</p>
+                </li>
             </ul>
-        </div>
+        </section>
 
-        <div class="card" style="animation-delay: 0.7s;">
-            <h2><i class="fas fa-briefcase icon"></i></h2>
-            <h3>Graphic Designer Freelancing </h3>
-            <p><i class="far fa-calendar-alt"></i> January 2024 - Present</p>
+        <section id="skills">
+            <h2><i class="fas fa-cogs"></i> Skills</h2>
             <ul>
-                <li>Deliver Some Amazing Social Media Post</li>
-                <li>Make Some Videos for Reels</li>
-                <li>Client Required Post & Videos</li>
+                <li>Graphic Design</li>
+                <li>Android Development</li>
+                <li>GitHub</li>
+                <li>GitLab</li>
+                <li>AOSP Projects</li>
+                <li>Flutter Development</li>
             </ul>
-        </div>
-        
-            <div class="card" style="animation-delay: 0.8s;">
-            <h2><i class="fas fa-briefcase icon"></i></h2>
-            <h3>Android Developer </h3>
-            <p><i class="far fa-calendar-alt"></i> June 2019 - Present </p>
+        </section>
+
+        <section id="education">
+            <h2><i class="fas fa-graduation-cap"></i> Education</h2>
             <ul>
-                <li>Make Some Project On Android Studio</li>
-                <li>Deliverd some Client Apps</li>
-                <li>Calculator, Notes, About us</li>
+                <li>
+                    <h3>B.Tech</h3>
+                    <p>LNCT BHOPAL | Graduating in 2024</p>
+                </li>
+                <li>
+                    <h3>Diploma in Electrical</h3>
+                    <p>BITT POLYTECHNIC COLLEGE | 2029</p>
+                </li>
+                <li>
+                    <h3>Matriculation</h3>
+                    <p>St. Stephen School | 2026</p>
+                </li>
             </ul>
-        </div>
-        
-            <div class="card" style="animation-delay: 0.9s;">
-            <h2><i class="fas fa-briefcase icon"></i></h2>
-            <h3>Flutter Developer </h3>
-            <p><i class="far fa-calendar-alt"></i> June 2024 - Present </p>
-            <ul>
-                <li>Make Some Project On Flutter FLow</li>
-                <li>Deliverd Wallpaper App</li>
-                <li>Master Knowledege on Flutter Flow App</li>
-            </ul>
-        </div>
-        
-            <div class="card" style="animation-delay: 0.10s;">
-            <h2><i class="fas fa-briefcase icon"></i></h2>
-            <h3>AOSP Project & Github | Gitlab </h3>
-            <p><i class="far fa-calendar-alt"></i> January 2023 - Present </p>
-            <ul>
-                <li>Running AOSP Project Name MistOS</li>
-                <li>400 active members</li>
-                <li>Advance Knowledege on Github & Gitlab</li>
-            </ul>
-        </div>
+        </section>
 
-        <div class="card" style="animation-delay: 0.8s;">
-            <h2><i class="fas fa-graduation-cap icon"></i>Education</h2>
-            <h3>BTech - LNCT Bhopal</h3>
-            <p><i class="far fa-calendar-alt"></i>2021 - 2024</p>
-            <p>BTech From CSE Branch</p>
-        </div>
-        
-        <div class="card" style="animation-delay: 0.9s;">
-            <h2><i class="fas fa-graduation-cap icon"></i></h2>
-            <h3>Diploma - BITT Polytechnic</h3>
-            <p><i class="far fa-calendar-alt"></i> 2016-2019</p>
-            <p>1 Year Apprentice On Centeral Coalfields</p>
-        </div>
-        
-        <div class="card" style="animation-delay: 0.10s;">
-            <h2><i class="fas fa-graduation-cap icon"></i></h2>
-            <h3>Matriculation - St' Stephen</h3>
-            <p><i class="far fa-calendar-alt"></i> 2016</p>
-            <p>Passed 10th With High Grade</p>
-        </div>
+        <section id="contact">
+            <h2><i class="fas fa-envelope"></i> Contact</h2>
+            <p>Phone: +91 9504440781</p>
+            <p>Email: Yusufnoor786@gmail.com</p>
+            <p>Address: Bhopal, Madhya Pradesh, India</p>
+        </section>
+    </main>
 
-        <div class="card" style="animation-delay: 1s;">
-            <h2><i class="fas fa-address-card icon"></i>Contact Information</h2>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-envelope icon"></i><strong>Email:</strong> yusufnoor786@gmail.com
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone icon"></i><strong>Phone:</strong> (+91 9504440781)
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-linkedin icon"></i><strong>LinkedIn:</strong> https://www.linkedin.com/in/yusuf-noor-98ba54275
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt icon"></i><strong>Location:</strong> Bhopal, Madhya Pardesh/India
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            const cards = document.querySelectorAll('.card');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.animationPlayState = 'running';
-                    }
-                });
-            });
-
-            cards.forEach(card => {
-                card.style.animationPlayState = 'paused';
-                observer.observe(card);
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
